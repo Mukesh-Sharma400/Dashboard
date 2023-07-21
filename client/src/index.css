@@ -8,3 +8,16 @@ body,
   width: 100%;
   font-family: "Inter", sans serif;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #21295c00;
+}
+::-webkit-scrollbar-thumb {
+  background: #4c559600;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cca7528a;
+}

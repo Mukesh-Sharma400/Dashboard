@@ -10,6 +10,10 @@ import clientRoutes from "./routes/client.js";
 import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 
+// DATA IMPORTS
+import User from "./models/User.js";
+import { dataUser } from "./data/index.js";
+
 // CONFIGURATION
 dotenv.config();
 const app = express();
@@ -37,6 +41,8 @@ mongoose
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server Running on PORT: ${PORT}`);
+      // RUN ONLY ONE TIME
+      // User.insertMany(dataUser);
     });
   })
   .catch((error) => {
