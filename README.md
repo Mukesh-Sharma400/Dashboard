@@ -1,4 +1,4 @@
-*Welcome to our MERN Stack Admin Dashboard!*
+**Welcome to our MERN Stack Admin Dashboard!**
 
 Our website offers a powerful and efficient solution for managing your business or project with ✨ease✨.
 
