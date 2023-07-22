@@ -192,7 +192,7 @@ const Sidebar = ({
           </Box>
           <Box>
             <Divider />
-            <Box display="flex" gap="1rem" m="1rem">
+            <FlexBetween textTransform="none" gap="1rem" m="1rem">
               <Box
                 component="img"
                 alt="profile"
@@ -217,7 +217,13 @@ const Sidebar = ({
                   {user.occupation}
                 </Typography>
               </Box>
-            </Box>
+              <SettingsOutlined
+                sx={{
+                  color: theme.palette.secondary[300],
+                  fontSize: "25px ",
+                }}
+              />
+            </FlexBetween>
           </Box>
         </Drawer>
       )}

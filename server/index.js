@@ -12,7 +12,9 @@ import managementRoutes from "./routes/management.js";
 
 // DATA IMPORTS
 import User from "./models/User.js";
-import { dataUser } from "./data/index.js";
+import Product from "./models/Product.js";
+import ProductStat from "./models/ProductStat.js";
+import { dataUser, dataProduct, dataProductStat } from "./data/index.js";
 
 // CONFIGURATION
 dotenv.config();
@@ -43,6 +45,8 @@ mongoose
       console.log(`Server Running on PORT: ${PORT}`);
       // RUN ONLY ONE TIME
       // User.insertMany(dataUser);
+      // Product.insertMany(dataProduct);
+      // ProductStat.insertMany(dataProductStat);
     });
   })
   .catch((error) => {
