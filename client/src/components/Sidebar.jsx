@@ -28,10 +28,10 @@ import {
   TrendingUpOutlined,
   PieChartOutlined,
 } from "@mui/icons-material";
-import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
+import { useEffect, useState } from "react";
 import profileImage from "assets/profile.png";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
   {

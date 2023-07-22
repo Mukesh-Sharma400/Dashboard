@@ -51,7 +51,6 @@ const Product = ({
           ${Number(price).toFixed(2)}
         </Typography>
         <Rating value={rating} readOnly />
-
         <Typography variant="body2">{description}</Typography>
       </CardContent>
       <CardActions>

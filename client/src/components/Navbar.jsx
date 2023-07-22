@@ -22,13 +22,11 @@ import {
   Menu,
   MenuItem,
   useTheme,
-  Input,
 } from "@mui/material";
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const dispatch = useDispatch();
   const theme = useTheme();
-
   const [anchorEl, setAnchorEl] = useState(null);
   const isOpen = Boolean(anchorEl);
   const handleClick = (event) => setAnchorEl(event.currentTarget);
@@ -37,7 +35,6 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   return (
     <AppBar sx={{ position: "static", background: "none", boxShadow: "none" }}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
-        {/* LEFT SIDE */}
         <FlexBetween gap="1rem">
           <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
@@ -53,7 +50,6 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
             </IconButton>
           </FlexBetween>
         </FlexBetween>
-        {/* RIGHT SIDE */}
         <FlexBetween gap="1.5rem">
           <IconButton
             onClick={() => {
