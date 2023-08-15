@@ -88,109 +88,57 @@ const Product = ({
 const Products = () => {
   const { data, isLoading } = useGetProductsQuery();
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
+
+  const renderProductSkeletons = () =>
+    Array.from({ length: 8 }, (_, index) => (
+      <Skeleton
+        key={index}
+        variant="rectangular"
+        width={235.71}
+        height={233.59}
+        sx={{ borderRadius: "0.55rem" }}
+      />
+    ));
+
   return (
-    <Box m="1.5rem 2.5rem">
+    <Box m="1.5rem">
       <Header title="PRODUCTS" subtitle="See your list of products." />
-      {data || !isLoading ? (
-        <Box
-          mt="20px"
-          pb="20px"
-          display="grid"
-          gridTemplateColumns="repeat(4, minmax(0, 1fr))"
-          justifyContent="space-between"
-          rowGap="20px"
-          columnGap="1.33%"
-          sx={{
-            "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
-          }}
-        >
-          {data.map(
-            ({
-              _id,
-              name,
-              description,
-              price,
-              rating,
-              category,
-              supply,
-              stat,
-            }) => (
-              <Product
-                key={_id}
-                _id={_id}
-                name={name}
-                description={description}
-                price={price}
-                rating={rating}
-                category={category}
-                supply={supply}
-                stat={stat}
-              />
-            )
-          )}
-        </Box>
-      ) : (
-        <Box
-          mt="20px"
-          display="grid"
-          gridTemplateColumns="repeat(4, minmax(0, 1fr))"
-          justifyContent="space-between"
-          rowGap="20px"
-          columnGap="1.33%"
-          sx={{
-            "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
-          }}
-        >
-          <Skeleton
-            variant="rectangular"
-            width={228}
-            height={233}
-            sx={{ borderRadius: "0.55rem" }}
-          />
-          <Skeleton
-            variant="rectangular"
-            width={228}
-            height={233}
-            sx={{ borderRadius: "0.55rem" }}
-          />
-          <Skeleton
-            variant="rectangular"
-            width={228}
-            height={233}
-            sx={{ borderRadius: "0.55rem" }}
-          />
-          <Skeleton
-            variant="rectangular"
-            width={228}
-            height={233}
-            sx={{ borderRadius: "0.55rem" }}
-          />
-          <Skeleton
-            variant="rectangular"
-            width={228}
-            height={233}
-            sx={{ borderRadius: "0.55rem" }}
-          />
-          <Skeleton
-            variant="rectangular"
-            width={228}
-            height={233}
-            sx={{ borderRadius: "0.55rem" }}
-          />
-          <Skeleton
-            variant="rectangular"
-            width={228}
-            height={233}
-            sx={{ borderRadius: "0.55rem" }}
-          />
-          <Skeleton
-            variant="rectangular"
-            width={228}
-            height={233}
-            sx={{ borderRadius: "0.55rem" }}
-          />
-        </Box>
-      )}
+      <Box
+        mt="20px"
+        pb="20px"
+        display="grid"
+        gridTemplateColumns={`repeat(${isNonMobile ? 4 : 1}, minmax(0, 1fr))`}
+        justifyContent="space-between"
+        rowGap="20px"
+        columnGap={isNonMobile ? "1.33%" : "0"}
+      >
+        {isLoading
+          ? renderProductSkeletons()
+          : data.map(
+              ({
+                _id,
+                name,
+                description,
+                price,
+                rating,
+                category,
+                supply,
+                stat,
+              }) => (
+                <Product
+                  key={_id}
+                  _id={_id}
+                  name={name}
+                  description={description}
+                  price={price}
+                  rating={rating}
+                  category={category}
+                  supply={supply}
+                  stat={stat}
+                />
+              )
+            )}
+      </Box>
     </Box>
   );
 };
