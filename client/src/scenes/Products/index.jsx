@@ -94,6 +94,7 @@ const Products = () => {
       {data || !isLoading ? (
         <Box
           mt="20px"
+          pb="20px"
           display="grid"
           gridTemplateColumns="repeat(4, minmax(0, 1fr))"
           justifyContent="space-between"

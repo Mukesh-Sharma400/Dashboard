@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import Layout from "scenes/Layout";
 import { themeSettings } from "theme";
 import Products from "scenes/Products";
+import Customers from "scenes/Customers";
 import Dashboard from "scenes/Dashboard";
 import { useSelector } from "react-redux";
 import { createTheme } from "@mui/material/styles";
@@ -23,6 +24,7 @@ function App() {
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/products" element={<Products />} />
+              <Route path="/customers" element={<Customers />} />
             </Route>
           </Routes>
         </ThemeProvider>
