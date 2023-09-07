@@ -51,11 +51,14 @@ const Customers = () => {
 
   return (
     <Box m="1.5rem">
-      <Header title="CUSTOMERS" subtitle="See your list of customers." />
+      <Header
+        title="CUSTOMERS"
+        subtitle="Unveil the Faces Behind Your Success."
+      />
       <Box
         mt="20px"
         pb="20px"
-        height="75vh"
+        height="80vh"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",

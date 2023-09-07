@@ -54,9 +54,14 @@ const Transactions = () => {
   ];
 
   return (
-    <Box m="1.5rem 2.5rem">
-      <Header title="TRANSACTIONS" subtitle="Entire list of transactions" />
+    <Box m="1.5rem">
+      <Header
+        title="TRANSACTIONS"
+        subtitle="Unravel the Story of Financial Flux."
+      />
       <Box
+        mt="20px"
+        pb="20px"
         height="80vh"
         sx={{
           "& .MuiDataGrid-root": {
