@@ -6,18 +6,19 @@ body,
 .app {
   height: 100%;
   width: 100%;
-  font-family: "Inter", sans serif;
+  font-family: "Inter", sans-serif;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
 }
+
+/* Track */
 ::-webkit-scrollbar-track {
-  background: #21295c00;
+  background: #21295c;
 }
+
+/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #4c559600;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #cca7528a;
+  background: #7a7f9d;
 }

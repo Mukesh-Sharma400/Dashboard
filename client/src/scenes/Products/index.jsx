@@ -94,7 +94,7 @@ const Products = () => {
       <Skeleton
         key={index}
         variant="rectangular"
-        width={235.71}
+        width="auto"
         height={233.59}
         sx={{ borderRadius: "0.55rem" }}
       />
